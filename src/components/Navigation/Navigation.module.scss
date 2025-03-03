@@ -1,0 +1,89 @@
+@import "../../mixin.scss";
+
+:root {
+  --nav-w: 150px;
+  --nav-h: 65px;
+}
+
+nav {
+  @include flex(center, space-between);
+  position: absolute;
+  top: 97.2%;
+  width: var(--panel-height);
+  letter-spacing: var(--letter-spacing);
+
+  .pageActive {
+    cursor: pointer;
+    height: var(--nav-h);
+    border-left: 3px solid var(--red);
+
+    .title {
+      @include background(
+        "../../assets/img/hive.png",
+        20.5%,
+        no-repeat,
+        105%,
+        center
+      );
+
+      padding-left: var(--indent-s-size);
+      width: var(--nav-w);
+      height: 35%;
+      background-color: var(--nav-red);
+
+      font-family: var(--Big-Shoulders-Display);
+      font-size: var(--font-l-size);
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .desc {
+      padding: var(--indent-s-size);
+      width: var(--nav-w);
+      background-color: rgba(0, 0, 255, 0.027);
+      font-family: var(--Big-Shoulders-Display);
+      font-size: var(--font-xxs-size);
+      font-weight: 400;
+      color: var(--grey);
+    }
+  }
+
+  .pageInactive {
+    cursor: pointer;
+    height: var(--nav-h);
+    border-left: 3px solid var(--nav-grey);
+
+    transition: var(--transition-default);
+    .title {
+      @include background(
+        "../../assets/img/hive.png",
+        20.5%,
+        no-repeat,
+        105%,
+        center
+      );
+
+      padding-left: var(--indent-s-size);
+      background-color: var(--black-grey);
+
+      font-family: var(--Big-Shoulders-Display);
+      font-size: var(--font-l-size);
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .desc {
+      padding: var(--indent-s-size);
+      width: var(--nav-w);
+      background-color: rgba(0, 0, 255, 0.027);
+      font-family: var(--Big-Shoulders-Display);
+      font-size: var(--font-xxs-size);
+      font-weight: 400;
+      color: var(--grey);
+    }
+  }
+
+  .pageInactive:hover {
+    filter: contrast(0.8);
+  }
+}

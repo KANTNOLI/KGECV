@@ -1,0 +1,95 @@
+@import "../../mixin.scss";
+
+.profile {
+  @include flex(start, space-between, column);
+  min-width: var(--panel-width);
+  min-height: var(--panel-height);
+  letter-spacing: var(--letter-spacing);
+
+  .avatar {
+    @include flex();
+    @include border();
+    width: var(--panel-width);
+    height: var(--panel-width);
+
+    img{
+      cursor: pointer;
+      @include hue(var(--deg));
+    }
+  }
+
+  .bio {
+    @include flex(start, space-between, column);
+    min-height: var(--panel-width);
+    margin-top: var(--indent-xl-size);
+
+    div {
+      margin-top: var(--indent-m-size);
+
+      .title {
+        font-family: var(--Iceland);
+        font-weight: 400;
+        font-size: var(--font-s-size);
+        letter-spacing: var(--letter-spacing);
+        color: var(--white);
+      }
+
+      .description {
+        margin-top: var(--indent-s-size);
+        font-family: var(--Big-Shoulders-Display);
+        font-weight: 700;
+        font-size: var(--font-l-size);
+        color: var(--red);
+      }
+
+      button {
+        margin-top: var(--indent-s-size);
+        @include flex(center, space-between);
+        padding: var(--padding-default);
+        opacity: 0.7;
+
+        min-width: var(--panel-width);
+        font-family: var(--Big-Shoulders-Display);
+        font-weight: 700;
+        font-size: var(--font-l-size);
+
+        transition: var(--transition-short);
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+
+      .availability {
+        background-color: var(--red);
+        @include background(
+          "../../assets/img/hive.png",
+          20.5%,
+          no-repeat,
+          108%,
+          center
+        );
+      }
+
+      .btn2 {
+        border: 1px solid var(--red);
+        color: var(--red);
+      }
+    }
+  }
+
+  .motto {
+    font-family: var(--Koulen);
+    line-height: var(--indent-xl-size);
+    font-weight: 400;
+    max-width: var(--panel-width);
+    .title {
+      font-size: var(--font-l-size);
+      color: var(--red);
+    }
+
+    .description {
+      font-size: var(--font-m-size);
+      color: var(--grey);
+    }
+  }
+}

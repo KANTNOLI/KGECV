@@ -1,0 +1,155 @@
+:root {
+  --font-size-16: 16px;
+  --font-size-18: 18px;
+  --font-size-14: 14px;
+  --padding-30: 30px;
+  --min-height-555: 555px;
+  --min-height-75: 75px;
+  --min-height-240: 240px;
+  --min-height-33: 33px;
+  --margin-bottom-10: 10px;
+  --padding-15: 15px;
+  --width-100: 100%;
+  --height-45: 45px;
+  --width-225: 225px;
+}
+
+@import "../../../../mixin.scss";
+
+.menuActive {
+  @include hue(var(--deg2));
+  height: 650px;
+  left: 50%;
+  letter-spacing: var(--letter-spacing);
+  transform: translateX(-50%);
+
+  .BigTitle {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--white);
+    font-family: var(--Big-Shoulders-Display);
+  }
+
+  .title {
+    font-size: var(--font-size-16);
+    color: var(--grey);
+    font-family: var(--Iceland);
+    letter-spacing: var(--letter-spacing);
+  }
+
+  .panel {
+    display: block;
+    position: relative;
+    @include flex(start, start, column);
+    height: 100px;
+
+    padding: var(--padding-30);
+    min-height: var(--min-height-555);
+    background-color: var(--black-red);
+
+    border: 1px solid var(--white-grey);
+  }
+
+  .btns {
+    backdrop-filter: blur(30px);
+    @include flex(center, space-between);
+    min-height: var(--min-height-33);
+
+    button {
+      color: var(--red);
+      font-size: var(--font-size-18);
+      font-weight: 700;
+      font-family: var(--Big-Shoulders-Display);
+      width: var(--width-225);
+      min-height: var(--min-height-33);
+      border: 1px solid var(--white-grey);
+      background-color: var(--black-red);
+
+      transition: var(--transition-shortra);
+    }
+
+    button:hover {
+      color: black;
+      background-color: var(--inactive-red);
+    }
+
+    button:active {
+      color: black;
+      background-color: var(--red);
+    }
+  }
+}
+
+.settingPanel:first-child {
+  margin: 0;
+}
+
+.settingPanel {
+  margin-top: 60px;
+  width: 100%;
+  height: 30px;
+
+  .panelTitles {
+    height: auto;
+    @include flex(start, space-between);
+
+    .panelTitleFirst {
+      font-family: var(--Big-Shoulders-Display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--red);
+    }
+
+    .panelTitleSecond {
+      font-family: var(--Iceberg);
+      font-size: 14px;
+      color: var(--grey);
+
+      span {
+        color: var(--white);
+      }
+    }
+  }
+}
+
+.panelDesc {
+  @include flex(start, space-between);
+  position: absolute;
+  bottom: 5%;
+  width: 400px;
+
+  p {
+    width: 360px;
+    font-size: 18px;
+    font-family: var(--Iceland);
+    color: var(--red);
+  }
+}
+
+input[type="range"] {
+  margin-top: 10px;
+  -webkit-appearance: none;
+  height: 35px;
+  background-color: BLACK;
+  width: 100%;
+}
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  cursor: pointer;
+  overflow: hidden;
+  height: inherit;
+  box-shadow: 0 0 10 0px black;
+}
+input[type="range"]::-webkit-slider-thumb {
+  position: relative;
+  width: 60px;
+  height: 42px;
+  cursor: pointer;
+  -webkit-appearance: none;
+  box-shadow: 0 0 0 -4px var(--nav-red), -40px 0 0 -4px var(--nav-red),
+    -85px 0 0 -4px var(--nav-red), -130px 0 0 -4px var(--nav-red),
+    -175px 0 0 -4px var(--nav-red), -220px 0 0 -4px var(--nav-red),
+    -265px 0 0 -4px var(--nav-red), -310px 0 0 -4px var(--nav-red),
+    -350px 0 0 -4px var(--nav-red), -390px 0 0 -4px var(--nav-red);
+  background-color: var(--red);
+}

@@ -1,0 +1,66 @@
+:root {
+  --font-size: 16px;
+  --padding-top: 50px;
+  --min-height: 550px;
+  --margin-bottom: 65px;
+  --width-100: 100%;
+  --min-height-50: 50px;
+  --width-25: 25%;
+  --width-65: 65%;
+}
+
+@import "../../../../mixin.scss";
+
+.corner {
+
+  position: absolute;
+  rotate: 45deg;
+  top: -8px;
+  left: -6px;
+  width: 3%;
+  height: 3%;
+  background-color: black;
+  border-right: 1.2px solid var(--white-grey);
+
+  //<div className={style.corner}></div>
+}
+
+.title {
+  font-size: var(--font-size);
+  color: var(--grey);
+  font-family: var(--Iceland);
+  letter-spacing: var(--letter-spacing);
+}
+
+.panel {
+  letter-spacing: var(--letter-spacing);
+  @include flex(start, space-between, column);
+  text-align: start;
+  padding-top: var(--padding-top);
+  min-height: var(--min-height);
+
+  border-top: 2px solid var(--red);
+  margin-bottom: var(--margin-bottom);
+
+  .page {
+    @include flex(start, space-between);
+    width: var(--width-100);
+    min-height: var(--min-height-50);
+
+    .question {
+      width: var(--width-25);
+      font-size: var(--font-size);
+      color: var(--white);
+      font-family: var(--Iceland);
+      letter-spacing: var(--letter-spacing);
+    }
+
+    .desc {
+      width: var(--width-65);
+      font-size: var(--font-size);
+      color: var(--grey);
+      font-family: var(--Iceland);
+      letter-spacing: var(--letter-spacing);
+    }
+  }
+}

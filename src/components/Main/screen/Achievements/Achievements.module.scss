@@ -1,0 +1,163 @@
+@import "../../../../mixin.scss";
+
+@mixin achievementSettings($color: grey, $active: 0) {
+  margin-top: var(--indent-xxl-size);
+  margin-left: var(--indent-m-size);
+  color: var($color);
+
+  @if $active == 0 {
+    opacity: 0.5;
+  }
+
+  .achFrame {
+    box-shadow: 0 0 25px var($color);
+    border: 1px solid var($color);
+
+    p {
+      background-color: var($color);
+    }
+  }
+  p {
+    color: var($color);
+  }
+}
+
+:root {
+  --achievements-el-w: 1200px;
+  --achievements-input-size: 12px;
+  --achievements-input-size-active: 2px;
+
+  --achievements-w: 110px;
+  --achievements-h: 150px;
+}
+
+.achievements {
+  background: linear-gradient(
+    90deg,
+    black 0%,
+    rgba(255, 0, 0, 0.13) 50%,
+    black 100%
+  );
+  @include flex(center, start, column);
+  width: 100%;
+  height: 100%;
+  letter-spacing: var(--letter-spacing);
+
+  .achievementsTitle {
+    margin-top: var(--title-everyone-top);
+    font-family: var(--Iceland);
+    font-size: var(--font-l-size);
+    color: var(--white);
+  }
+
+  .filter {
+    @include flex(center, start);
+    padding: var(--padding-big);
+    margin-top: var(--title-everyone-top);
+    width: var(--achievements-el-w);
+    border-top: 2px solid var(--red);
+    background-color: var(--black-red);
+
+    .filterTitle {
+      font-family: var(--Iceberg);
+      font-size: var(--font-s-size);
+      color: var(--grey);
+    }
+
+    .filterDiv {
+      margin-left: var(--indent-xl-size);
+      @include flex(center, start);
+
+      input {
+        position: relative;
+        cursor: pointer;
+        width: var(--indent-xl-size);
+        height: var(--indent-xl-size);
+        border: 2px solid var(--red);
+      }
+
+      input:checked:after {
+        position: absolute;
+        content: "";
+        top: var(--achievements-input-size-active);
+        left: var(--achievements-input-size-active);
+        width: var(--achievements-input-size);
+        height: var(--achievements-input-size);
+        background-color: var(--red);
+      }
+
+      .filterInactive {
+        margin-left: var(--indent-s-size);
+        font-size: var(--font-s-size);
+        font-family: var(--Iceberg);
+        color: var(--red);
+      }
+
+      .filterActive {
+        margin-left: var(--indent-s-size);
+        font-size: var(--font-s-size);
+        text-shadow: 0px 0px var(--indent-m-size) var(--red);
+        font-family: var(--Iceberg);
+        color: var(--red);
+      }
+    }
+  }
+
+  .content {
+    @include hue(var(--deg));
+    margin-top: var(--indent-m-size);
+    @include flex(start, start);
+    flex-wrap: wrap;
+    width: var(--achievements-el-w);
+
+    //Слепок для ачивок
+    div {
+      width: var(--achievements-w);
+      height: var(--achievements-h);
+      text-align: center;
+      font-size: var(--font-s-size);
+
+      .achFrame {
+        @include flex(center, space-between, column);
+        height: var(--achievements-w);
+        background-color: rgba(0, 0, 0, 0);
+
+        img {
+          width: 90%;
+          height: 90%;
+        }
+
+        p {
+          @include flex(center, center);
+          font-family: var(--Iceland);
+
+          height: var(--font-l-size);
+          width: 100%;
+          color: black;
+        }
+      }
+
+      p {
+        font-weight: 700;
+        margin-top: var(--indent-s-size);
+        font-family: var(--Big-Shoulders-Display);
+      }
+    }
+
+    .achievementActive {
+      //Создаем индивидуальную переменную, которая сохраняет X результат во время вызова (Save)
+      $achievementColor: --achievementColor;
+      @include achievementSettings($achievementColor, 1);
+    }
+
+    .achievementInactive {
+      $achievementColor: --achievementColor;
+      @include achievementSettings($achievementColor, 0);
+    }
+  }
+}
+
+//achievementLegendary / achievementLegendaryInactive
+//achievementEpic      / achievementEpicInactive
+//achievementRare      / achievementRareInactive
+//achievementOrdinary  / achievementOrdinaryInactive

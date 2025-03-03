@@ -1,0 +1,131 @@
+@import "../../mixin.scss";
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  @include flex();
+  -webkit-appearance: none;
+}
+
+.JapaneseSimulator {
+  @include flex(center, space-between);
+  width: 100%;
+  height: 100%;
+
+  .panel {
+    @include border();
+    padding: 10px;
+    width: 400px;
+    height: 800px;
+
+    .panelTextBox:first-child {
+      margin-top: 0;
+    }
+
+    .panelTextBox {
+      margin-top: 10px;
+      .panelMain {
+        font-family: var(--Iceland);
+        font-size: 18px;
+        color: var(--white);
+      }
+
+      .panelMedium {
+        margin-top: -5px;
+        font-family: var(--Koulen);
+        font-size: 24px;
+        color: var(--red);
+      }
+
+      .panelLow {
+        font-family: var(--Big-Shoulders-Display);
+        font-size: 24px;
+
+        font-weight: 700;
+        color: var(--green);
+
+        span {
+          font-family: var(--Big-Shoulders-Display);
+          font-size: 20px;
+          font-weight: 700;
+          color: var(--grey);
+        }
+      }
+    }
+    .panelDesc {
+      letter-spacing: 1px;
+      position: absolute;
+      bottom: 0;
+
+      h1 {
+        font-family: var(--Koulen);
+        font-size: 20px;
+        color: var(--red);
+      }
+
+      p {
+        margin-top: 10px;
+        font-family: var(--Koulen);
+        font-size: 14px;
+        color: var(--grey);
+
+        span {
+          font-size: 18px;
+          color: var(--green);
+        }
+      }
+      .panelDescPlus {
+        margin-right: 15px;
+        line-height: 16px;
+      }
+      .panelDescPlus:last-child {
+        margin-right: 15px;
+        margin-bottom: 25px;
+        line-height: 18px;
+      }
+    }
+  }
+
+  .column {
+    @include border();
+    width: 300px;
+    height: 100%;
+    background-color: var(--black-red);
+
+    .rowShow {
+      height: 0px;
+      opacity: 0;
+
+      transition: 0.2s ease;
+    }
+
+    .row:first-child {
+      margin: 0;
+    }
+
+    .row {
+      opacity: 1;
+      margin-top: 10px;
+      transform: rotateX(10deg);
+      @include flex(center, space-between);
+      @include border();
+      width: 100%;
+      height: 50px;
+
+      background-color: var(--black-red);
+      transition: 0.2s ease-in-out;
+      .cell {
+        @include flex();
+        width: 50px;
+        height: 50px;
+
+        font-family: var(--Iceberg);
+        font-weight: 700;
+        font-size: 22px;
+        color: var(--red);
+        transition: 0.2s ease-in-out;
+
+        transition: 0.2s ease;
+      }
+    }
+  }
+}

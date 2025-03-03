@@ -1,0 +1,172 @@
+@import "../../mixin.scss";
+
+:root {
+  --quest-content-h: 250px;
+  --quest-reward-icon: 40px;
+  --quest-setting-btn: 30px;
+}
+
+.section {
+  @include flex(space-between, space-between, column);
+  min-width: var(--panel-width);
+  height: var(--panel-height);
+  letter-spacing: var(--letter-spacing);
+
+  .activeQuest {
+    border-left: 2px solid var(--red);
+
+    .title {
+      @include flex(center, start);
+      font-family: var(--Big-Shoulders-Display);
+      color: var(--white);
+      background-color: var(--red);
+
+      @include background(
+        "../../assets/img/hive.png",
+        20.5%,
+        no-repeat,
+        108%,
+        center
+      );
+
+      font-weight: 700;
+      font-size: var(--font-l-size);
+      padding-left: var(--indent-m-size);
+    }
+
+    .titleDesc {
+      @include flex(center, start);
+      font-family: var(--Iceland);
+      color: var(--grey);
+      background-color: var(--black-red);
+      font-weight: 700;
+      font-size: var(--font-s-size);
+      padding-left: var(--indent-m-size);
+      min-height: var(--quest-setting-btn);
+    }
+
+    .content {
+      @include flex(center, space-between, column);
+      margin-top: var(--indent-l-size);
+      min-height: var(--quest-content-h);
+
+      .sect {
+        @include flex(start, space-between, column);
+        width: var(--panel-width);
+        padding-left: var(--indent-m-size);
+
+        .nameTitle {
+          font-family: var(--Iceland);
+          font-weight: 400;
+          font-size: var(--font-s-size);
+          color: var(--white);
+        }
+
+        .nameDesc {
+          font-family: var(--Big-Shoulders-Display);
+          font-weight: 700;
+          font-size: var(--font-l-size);
+          color: var(--red);
+        }
+
+        .nameDesc2 {
+          font-family: var(--Iceland);
+          font-weight: 400;
+          font-size: var(--font-s-size);
+          color: var(--grey);
+        }
+      }
+
+      .rewards {
+        @include flex(center, space-between);
+
+        .reward {
+          @include flex(center, space-between, column);
+          margin-right: var(--indent-m-size);
+          margin-top: var(--indent-s-size);
+
+          img {
+            @include hue(var(--deg));
+            border-radius: var(--indent-s-size);
+            width: var(--quest-reward-icon);
+            height: var(--quest-reward-icon);
+          }
+
+          p {
+            font-family: var(--Iceland);
+            font-weight: 400;
+            font-size: var(--font-s-size);
+            color: var(--grey);
+          }
+        }
+      }
+    }
+  }
+
+  .setting {
+    div {
+      @include flex(center, space-between);
+      padding-left: var(--indent-m-size);
+      margin-bottom: var(--indent-m-size);
+
+      font-family: var(--Big-Shoulders-Display);
+      font-weight: 700;
+      font-size: var(--font-l-size);
+    }
+
+    button {
+      width: var(--quest-setting-btn);
+      height: var(--quest-setting-btn);
+
+      @include background("", 80%, no-repeat, center, center);
+
+      transition: 0.03s ease-in-out;
+    }
+
+    .settingBtnActive {
+      color: var(--red);
+      button {
+        border: 1px solid var(--red);
+        background-image: url("../../assets/img/on.png");
+      }
+    }
+
+    .settingBtnInactive {
+      color: var(--inactive-red);
+      button {
+        border: 1px solid var(--inactive-red);
+        background-image: url("../../assets/img/off.png");
+      }
+    }
+
+    .openSetting {
+      @include flex(center, space-between);
+      padding-left: var(--indent-m-size);
+      min-width: var(--panel-width);
+
+      font-family: var(--Big-Shoulders-Display);
+      font-weight: 700;
+      font-size: var(--font-l-size);
+
+      height: var(--quest-reward-icon);
+      border: 1px solid var(--red);
+      color: var(--red);
+      span {
+        width: var(--quest-setting-btn);
+        height: var(--quest-setting-btn);
+
+        @include background(
+          "../../assets/img/setting.png",
+          80%,
+          no-repeat,
+          center,
+          center
+        );
+      }
+    }
+  }
+}
+
+button:hover {
+  background-color: var(--black-red);
+}

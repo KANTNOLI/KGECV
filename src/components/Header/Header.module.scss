@@ -1,0 +1,69 @@
+@import "../../mixin.scss";
+
+:root {
+  --left-size: 320px;
+  --right-size: 380px;
+
+  --numbers-size: 26px;
+  --plus-size: 33px;
+}
+
+.header {
+  @include flex(center, space-between);
+  font-family: var(--Big-Shoulders-Display);
+  letter-spacing: var(--letter-spacing);
+  font-weight: 700;
+
+  div {
+    @include flex(center, space-between);
+  }
+
+  .left {
+    @include flex(center, space-between);
+    min-width: var(--left-size);
+
+    span {
+      font-size: var(--numbers-size);
+      color: var(--green);
+    }
+    p {
+      font-size: var(--font-m-size);
+      color: var(--grey);
+    }
+
+    .coins {
+      @include flex(center, space-between);
+      min-width: var(--panel-width);
+
+      .button {
+        @include flex();
+        margin-right: var(--indent-s-size);
+        width: var(--plus-size);
+        height: var(--plus-size);
+        border: 1px solid rgba(255, 255, 255, 0.29);
+        color: var(--red);
+        font-size: var(--plus-size);
+        font-weight: 500;
+      }
+    }
+  }
+
+  .right {
+    @include flex(center, space-between);
+    font-family: var(--Iceland);
+    font-size: var(--font-s-size);
+    min-width: var(--right-size);
+    color: var(--grey);
+
+    .credits {
+      font-weight: 700;
+      letter-spacing: var(--letter-spacing);
+      font-family: var(--Iceberg);
+      font-size: var(--font-xs-size);
+    }
+
+    span {
+      color: var(--white);
+    }
+  }
+}

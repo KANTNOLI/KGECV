@@ -1,0 +1,79 @@
+@import "../../../../mixin.scss";
+
+.games {
+  background: linear-gradient(
+    90deg,
+    black 0%,
+    rgba(255, 0, 0, 0.13) 50%,
+    black 100%
+  );
+  @include flex(center, start, column);
+  width: 100%;
+  height: 100%;
+  letter-spacing: var(--letter-spacing);
+
+  .gamesTitle {
+    margin-top: var(--title-everyone-top);
+    font-size: 18px;
+    font-family: var(--Iceland);
+    color: var(--white);
+  }
+
+  .gameList {
+    @include flex(center, space-between);
+    flex-wrap: wrap;
+    max-width: 470px;
+
+    .game {
+      @include flex(center, space-between, column);
+      margin-top: 25px;
+      width: 230px;
+      height: 190px;
+      transition: var(--transition-default);
+
+      a{
+        @include flex(center, space-between, column);
+        margin-top: 25px;
+        transition: var(--transition-default);
+      }
+
+      img {
+        box-shadow: 0 0 5px var(--black-grey);
+        width: 230px;
+        height: 150px;
+        transition: var(--transition-default);
+      }
+
+      .gameTitle {
+        font-family: var(--Big-Shoulders-Display);
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--red);
+      }
+
+      .gameDesc {
+        font-family: var(--Iceland);
+        font-size: 14px;
+        color: var(--grey);
+      }
+    }
+
+    .game:hover {
+      filter: brightness(0.9) blur(0.5px);
+      img {
+        box-shadow: 0 0 20px var(--white-grey);
+      }
+    }
+  }
+
+  .comments {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    width: 200px;
+
+    font-family: var(--Iceland);
+    font-size: 14px;
+    color: var(--grey);
+  }
+}

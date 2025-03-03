@@ -1,0 +1,76 @@
+@import "../../mixin.scss";
+
+:root {
+  --HI-size: 538px;
+  --HI-letter-space: -35px;
+  --title-size: 26px;
+  --decription-size: 20px;
+  --button-text-size: 22px;
+  --button-size-w: 266px;
+  --button-size-h: 55px;
+  --info-w: 734px;
+  --info-h: 315px;
+  --wrapper-w: 1226px;
+}
+
+.main {
+  @include hue(var(--deg));
+  @include flex(center, center);
+  height: 90vh;
+}
+
+.wrapper {
+  @include flex(center, space-between);
+  width: var(--wrapper-w);
+
+  .hi {
+    @include flex();
+    letter-spacing: var(--HI-letter-space);
+    color: var(--red);
+    font-weight: 700;
+    font-family: var(--Big-Shoulders-Display);
+    font-size: var(--HI-size);
+  }
+
+  .info {
+    @include flex(center, space-between, column);
+    width: var(--info-w);
+    min-height: var(--info-h);
+    align-items: start;
+
+    .title {
+      font-family: var(--Iceland);
+      font-weight: 400;
+      font-size: var(--title-size);
+      letter-spacing: var(--letter-spacing);
+      color: var(--white);
+    }
+
+    .decription {
+      font-weight: 400;
+      font-size: var(--decription-size);
+      line-height: 130%;
+      letter-spacing: var(--letter-spacing);
+      color: var(--white);
+      font-family: var(--Iceland);
+    }
+
+    .button {
+      min-width: var(--button-size-w);
+      min-height: var(--button-size-h);
+      border: 1px solid var(--red);
+
+      color: var(--red);
+      font-family: var(--Big-Shoulders-Display);
+      font-weight: 800;
+      font-size: var(--button-text-size);
+      letter-spacing: var(--letter-spacing);
+
+      transition: var(--transition-short);
+
+      &:hover {
+        background-color: rgba(255, 0, 0, 0.096);
+      }
+    }
+  }
+}

@@ -1,0 +1,130 @@
+@import "../../mixin.scss";
+
+div {
+  transition: all 0.25s ease;
+}
+
+.Snake {
+  @include flex(center, space-between);
+
+  width: 100%;
+  height: 100%;
+  letter-spacing: var(--letter-spacing);
+
+  .screen {
+    position: relative;
+    @include border();
+    width: 800px;
+    height: 800px;
+    border-left: 1px solid var(--black-grey);
+    border-right: 1px solid var(--black-grey);
+    background-color: var(--black-red);
+
+    .snake {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--white-grey);
+      background-color: var(--inactive-red);
+
+      transition: all 0.2s ease;
+    }
+
+    .snake2 {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--white-grey);
+      background-color: var(--inactive-red);
+      filter: brightness(0.7);
+
+      transition: all 0.2s ease;
+    }
+
+    .snakeHead {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--white-grey);
+      background-color: var(--red);
+
+      transition: all 0.2s ease;
+    }
+
+    .food {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--white-grey);
+      background-color: var(--green);
+    }
+  }
+
+  .panel {
+    @include border();
+    padding: 10px;
+    width: 220px;
+    height: 800px;
+
+    .panelTextBox:first-child {
+      margin-top: 0;
+    }
+
+    .panelTextBox {
+      margin-top: 5px;
+      .panelMain {
+        font-family: var(--Iceland);
+        font-size: 14px;
+        color: var(--white);
+      }
+
+      .panelMedium {
+        font-family: var(--Koulen);
+        font-size: 18px;
+        color: var(--red);
+      }
+
+      .panelLow {
+        font-family: var(--Big-Shoulders-Display);
+        font-size: 24px;
+
+        font-weight: 700;
+        color: var(--green);
+
+        span {
+          font-family: var(--Big-Shoulders-Display);
+          font-size: 18px;
+          font-weight: 700;
+          color: var(--grey);
+        }
+      }
+    }
+    .panelDesc {
+      position: absolute;
+      bottom: 0;
+
+      h1 {
+        font-family: var(--Koulen);
+        font-size: 18px;
+        color: var(--red);
+      }
+
+      p {
+        margin-top: -10px;
+        font-family: var(--Koulen);
+        font-size: 12px;
+        color: var(--grey);
+
+        span {
+          font-size: 16px;
+          color: var(--green);
+        }
+      }
+      .panelDescPlus {
+        margin-top: 0px;
+        margin-bottom: 10px;
+        line-height: 15px;
+      }
+    }
+  }
+}
