@@ -1,4 +1,4 @@
- This is one of my pet projects created for fun, this site has a soundtrack, beautiful animations, 2D games (Snake and numbers), visual and sound parameters. 
+This is one of my pet projects created for fun, this site has a soundtrack, beautiful animations, 2D games (Snake and numbers), visual and sound parameters. 
 > This project was created using JS, React+ Redux, Vite (Project Builder), SCSS
 
 desing - Alex Dimitrov @xavortm (THX <3)
